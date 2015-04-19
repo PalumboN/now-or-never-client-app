@@ -1,0 +1,18 @@
+<ion-view class="venue-view">
+  <ion-nav-title>
+    <span>Venue</span>
+  </ion-nav-title>
+  <ion-content>
+    <map class="map" data-tap-disabled="true" center="{{position.lat}},{{position.lng}}" zoom="15" disable-default-u-i="true">
+      <marker position="{{position.lat}},{{position.lng}}" visible="true"></marker>
+    </map>
+    <div class="venue-location">
+      <div class="row">
+        <div class="col col-top">
+          <p class="venue-name"><strong>Antel Auditorium</strong></p>
+          <p>Guatemala 1075<br>Montevideo, Uruguay</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
