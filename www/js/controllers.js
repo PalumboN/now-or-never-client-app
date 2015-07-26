@@ -2,6 +2,8 @@ angular.module('nan.controllers', [])
 
 .controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, socketFactory) {
 
+  $scope.data = {};
+  $scope.myId = JSON.parse($cookies.user).profile.displayName;
   $scope.messages = [];
 
   var socket = socketFactory({ ioSocket: io.connect('http://localhost:3000', { forceNew: true }) });
@@ -33,7 +35,7 @@ angular.module('nan.controllers', [])
     text: "Searching..."
   });
 
-  socket.emit('searching', '@s.nick');
+  socket.emit('searching', $scope.myId);
 
 
   $scope.hideTime = true;
