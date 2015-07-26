@@ -12,6 +12,7 @@ angular.module('nan', [
   'nan.directives',
   'ngMap',
   'timer',
+  'jlareau.pnotify',
   'ngCookies'
 ])
 .run(function($ionicPlatform) {

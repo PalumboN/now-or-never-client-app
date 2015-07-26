@@ -8,7 +8,8 @@
 <ion-content class="content-stable">
     <div class="row">
         <div class="col col-75">
-<timer countdown="5" max-time-unit="'minute'" interval="1000"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
+
+<timer id="elsupertimer" countdown="5" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
         </div>
         <div class="col"><center><h1 >{{ messageCount }}</h1>mensajes</center></div>
     </div>
