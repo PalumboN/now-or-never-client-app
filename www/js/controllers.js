@@ -37,7 +37,6 @@ angular.module('nan.controllers', [])
 
   socket.emit('searching', $scope.myId);
 
-
   $scope.hideTime = true;
 
   var alternate,
