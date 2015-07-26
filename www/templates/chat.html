@@ -1,4 +1,4 @@
-<ion-view view-title="{{contact.profile.displayName}}, 25 años">
+<ion-view view-title="{{contact.profile.displayName}}">
 <ion-nav-buttons side="right">
 <a href="#/profile">
         <button class="button ion-person" style="border: none;
@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col col-75">
 
-<timer id="elsupertimer" countdown="5" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
+<timer id="elsupertimer" countdown="180" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
         </div>
         <div class="col"><center><h1 >{{ messageCount }}</h1>mensajes</center></div>
     </div>
