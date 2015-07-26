@@ -7,15 +7,16 @@ angular.module('underscore', [])
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('jsconfuy', [
-  'ionic',
-  'jsconfuy.controllers',
-  'jsconfuy.services',
-  'jsconfuy.filters',
-  'jsconfuy.directives',
-  'ngMap'
-])
 
+angular.module('nan', [
+  'ionic',
+  'nan.controllers',
+  'nan.services',
+  'nan.filters',
+  'nan.directives',
+  'ngMap',
+  'timer'
+])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -28,58 +29,31 @@ angular.module('jsconfuy', [
       StatusBar.styleDefault();
     }
   });
+
+}).config(function($ionicConfigProvider) {
+  // remove back button previous title text
+  // use unicode em space characters to increase touch target area size of back button
+  $ionicConfigProvider.backButton.previousTitleText(false).text('&emsp;&emsp;');
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
+
   $stateProvider
+    .state('main', {
+      url: '/main',
+      templateUrl: 'templates/main.html',
+      controller: 'MessagesCtrl'
+    })
+    .state('config', {
+      url: '/config',
+      templateUrl: 'templates/config.html'
+    })
+    .state('chat', {
+      url: '/chat',
+      templateUrl: 'templates/chat.html',
+      controller: 'MessagesCtrl'
+    })
 
-  .state('app', {
-    url: "/app",
-    abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
-  })
 
-  .state('app.speakers', {
-    url: "/speakers",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/speakers.html",
-        controller: 'SpeakersCtrl'
-      }
-    }
-  })
+   $urlRouterProvider.otherwise('/main');
 
-  .state('app.venue', {
-    url: "/venue",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/venue.html",
-        controller: 'VenueCtrl'
-      }
-    }
-  })
-
-  .state('app.agenda', {
-    url: "/agenda",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/agenda.html",
-        controller: 'AgendaCtrl'
-      }
-    }
-  })
-
-  .state('app.event', {
-    url: "/event/:eventId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/event.html",
-        controller: 'EventCtrl'
-      }
-    }
-  });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/agenda');
-});
+})

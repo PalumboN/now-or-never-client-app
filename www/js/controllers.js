@@ -1,86 +1,50 @@
-angular.module('jsconfuy.controllers', [])
+angular.module('nan.controllers', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate) {
 
-})
+  $scope.hideTime = true;
 
-.controller('SpeakersCtrl', function($scope, $http, Speakers, $ionicLoading) {
-  $scope.speakers = [];
+  var alternate,
+    isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
 
-  $ionicLoading.show({
-    template: 'Loading...'
-  });
+  $scope.sendMessage = function() {
+    alternate = !alternate;
 
-  Speakers.get()
-  .then(function(speakers){
-    $scope.speakers = speakers;
-    $ionicLoading.hide();
-  },function(err){
-    $ionicLoading.hide();
-  });
+    var d = new Date();
+  d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
 
-  $scope.goToUrl = function(url){
-    //use inAppBrowser plugin
-    window.open(url, '_blank', 'location=yes');
-  }
-})
-
-.controller('VenueCtrl', function($scope) {
-  //map with venue position
-  $scope.position = {
-    lat: -34.892589,
-    lng: -56.194638
-  };
-
-  $scope.$on('mapInitialized', function(event, map) {
-    $scope.map = map;
-  });
-})
-
-
-.controller('AgendaCtrl', function($scope, Agenda, $ionicLoading) {
-  $scope.events = [];
-
-  $ionicLoading.show({
-    template: 'Loading...'
-  });
-
-  Agenda.get()
-  .then(function(events){
-    $scope.events = events;
-    $ionicLoading.hide();
-  },function(err){
-    $ionicLoading.hide();
-  });
-})
-
-.controller('EventCtrl', function($scope, Agenda, $stateParams, $ionicLoading) {
-  var eventId = $stateParams.eventId;
-
-  $ionicLoading.show({
-    template: 'Loading...'
-  });
-
-  Agenda.getEvent(eventId)
-  .then(function(event){
-    $scope.event = event;
-    $ionicLoading.hide();
-  },function(err){
-    $ionicLoading.hide();
-  });
-
-  $scope.shareEvent = function(event){
-    var speakersText = "";
-
-    _.each(event.speakers, function(speaker, index){
-      speakersText += speaker.name;
-      if((index+1) < event.speakers.length){
-        speakersText += " & ";
-      }
+    $scope.messages.push({
+      userId: alternate ? '12345' : '54321',
+      text: $scope.data.message,
+      time: d
     });
 
-    var messageToShare = event.title + " by " + speakersText + " at #JSConfUY";
-    window.plugins.socialsharing.share(messageToShare);
+    delete $scope.data.message;
+    $ionicScrollDelegate.scrollBottom(true);
+
   };
 
-})
+
+  $scope.inputUp = function() {
+    if (isIOS) $scope.data.keyboardHeight = 216;
+    $timeout(function() {
+      $ionicScrollDelegate.scrollBottom(true);
+    }, 300);
+
+  };
+
+  $scope.inputDown = function() {
+    if (isIOS) $scope.data.keyboardHeight = 0;
+    $ionicScrollDelegate.resize();
+  };
+
+  $scope.closeKeyboard = function() {
+    // cordova.plugins.Keyboard.close();
+  };
+
+
+  $scope.data = {};
+  $scope.myId = '12345';
+  $scope.messages = [];
+
+});

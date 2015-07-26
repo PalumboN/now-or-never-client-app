@@ -4,6 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
+<style type="text/css">
+.scroll {
+  padding: 10px 0 50px !important;
+}
+
+.messages {
+  align-content: center !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+}
+
+.messages .message {
+  padding: 10px !important;
+  overflow: hidden !important;
+  text-align: left !important;
+}
+
+.messages.other .message {
+  text-align: right !important;
+}
+
+.messages.other .message-span {
+  color: black !important;
+  background-color: #C7C7CC !important;
+}
+
+.message-span {
+  background: #007AFF !important;
+  display: inline-block !important;
+  color: white !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  text-align: left !important;
+  max-width: 240px !important;
+}
+</style>
 
 
     <!-- compiled css output -->
@@ -27,9 +63,19 @@
     <script src="js/services.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
+        <script data-require="moment.js@2.8.3" data-semver="2.8.3" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+    <script src="js/humanize-duration.js"></script>
+    <script src="js/angular-timer.min.js"></script>
+    
   </head>
 
-  <body ng-app="jsconfuy">
+  <body ng-app="nan">
+     <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button >
+      </ion-nav-back-button>
+    </ion-nav-bar>
     <ion-nav-view></ion-nav-view>
   </body>
 </html>
+
+
