@@ -31,7 +31,7 @@ module.exports = function(app) {
   app.use(passport.initialize());
   app.use(passport.session());
   app.get('/auth/facebook', passport.authenticate('facebook', {
-    scope: ['user_status', 'user_about_me']
+    scope: ['user_status', 'user_about_me', 'user_birthday']
   }));
   return app.get('/auth/facebook/callback', passport.authenticate('facebook', {
     failureRedirect: '/'
