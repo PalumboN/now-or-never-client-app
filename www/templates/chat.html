@@ -9,9 +9,16 @@
     <div class="row">
         <div class="col col-75">
 
-<timer id="elsupertimer" countdown="180" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
+
+<timer id="elsupertimer" countdown="180" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()"><h1 class="timer" style="font-family: 'Open Sans','Helvetica Neue', 'Roboto', 'Segoe UI', sans-serif;
+line-height: 1.2;" >{{mminutes}}m:{{sseconds}}s</h1></timer>
         </div>
-        <div class="col"><center><h1 >{{ messageCount }}</h1>mensajes</center></div>
+        <div class="col"><center><h1 style="font-size: 25px;
+line-height: 24px;
+margin-top: 10px;
+color: #A0A0A0;
+margin-bottom:0;
+font-weight: bold;">{{ messageCount }}</h1>mensajes</center></div>
     </div>
     <hr>
 <div ng-repeat="message in messages"

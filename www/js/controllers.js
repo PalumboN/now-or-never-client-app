@@ -41,7 +41,6 @@ angular.module('nan.controllers', [])
 
   socket.emit('searching', $scope.me);
 
-
   $scope.hideTime = true;
 
   var isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
