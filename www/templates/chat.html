@@ -8,9 +8,9 @@
 <ion-content class="content-stable">
     <div class="row">
         <div class="col col-75">
-<timer countdown="180" max-time-unit="'minute'" interval="1000"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
+<timer countdown="5" max-time-unit="'minute'" interval="1000"><h1>{{mminutes}}m:{{sseconds}}s</h1></timer>
         </div>
-        <div class="col"><center><h1 >{{5 - myMessages().length}}</h1>mensajes</center></div>
+        <div class="col"><center><h1 >{{ messageCount }}</h1>mensajes</center></div>
     </div>
     <hr>
 <div ng-repeat="message in messages"
@@ -25,9 +25,9 @@
     </ion-content>
   <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" style="margin-top:20%">
       <label class="item-input-wrapper">
-        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" ng-disabled="timeOutBaby()"/>
       </label>
-      <button class="button button-clear" ng-click="sendMessage()">
+      <button class="button button-clear" ng-click="sendMessage()" ng-disabled="timeOutBaby() || data.message.length < 1">
         Send
       </button>
     </ion-footer-bar>
