@@ -1,14 +1,12 @@
 angular.module('nan.controllers', [])
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory, contact) {
 
-
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory) {
   $scope.data = {};
-  $scope.myId = JSON.parse($cookies.user).profile.displayName;
+  $scope.me = JSON.parse($cookies.user);
   $scope.messages = [];  
   $scope.messageCount = 5;
   $scope.data.message = "";
   $scope.noMoreTime = false
-  
 
   var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
 
@@ -19,9 +17,11 @@ angular.module('nan.controllers', [])
   })(this));
 
   socket.on('find', (function(_this) {
-    return function(userNick) {
-      return $scope.messages.push({
-        text: "Connected with " + userNick
+    return function(user) {
+      $scope.contact = user;
+      contact.profile = user.profile;
+      $scope.messages.push({
+        text: "Connected with " + user.profile.displayName
       });
     };
   })(this));
@@ -31,7 +31,7 @@ angular.module('nan.controllers', [])
       $scope.messages.push({
         text: "Searching..."
       });
-      return socket.emit('searching', '@s.nick');
+      return socket.emit('searching', $scope.me);
     };
   })(this));
 
@@ -39,7 +39,7 @@ angular.module('nan.controllers', [])
     text: "Searching..."
   });
 
-  socket.emit('searching', $scope.myId);
+  socket.emit('searching', $scope.me);
 
   $scope.hideTime = true;
 
@@ -50,7 +50,7 @@ angular.module('nan.controllers', [])
       return
     }
     message = {
-      userId: 12345,
+      user: $scope.me,
       text: $scope.data.message
     };
 
@@ -91,11 +91,8 @@ angular.module('nan.controllers', [])
   }
 
 
-  $scope.data = {};
-  $scope.myId = '12345';
-  $scope.messages = [];
-
 })
+
 .controller('LoginCtrl', function($scope, $cookies, $state) {
  $scope.getCookie = function() {
     return $cookies.user
@@ -104,5 +101,14 @@ angular.module('nan.controllers', [])
     $state.go('main')
   }
 
+})
 
+.controller('ProfileCtrl', function($scope, contact) {
+  $scope.user = contact;
+  $scope.showMeInteresan = false;
+})
+
+.controller('ConfigCtrl', function($scope, $cookies) {
+  $scope.user = JSON.parse($cookies.user);
+  $scope.showMeInteresan = true;
 })

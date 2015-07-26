@@ -42,7 +42,13 @@ angular.module('nan', [
     })
     .state('config', {
       url: '/config',
-      templateUrl: 'templates/config.html'
+      templateUrl: 'templates/config.html',
+      controller: 'ConfigCtrl'
+    })
+    .state('contactProfile', {
+      url: '/profile',
+      templateUrl: 'templates/config.html',
+      controller: 'ProfileCtrl'
     })
     .state('chat', {
       url: '/chat',
@@ -58,3 +64,6 @@ angular.module('nan', [
    $urlRouterProvider.otherwise('/login');
 
 })
+
+
+.factory("contact",function() { return {}; });
