@@ -102,10 +102,14 @@ angular.module('nan.controllers', [])
     $state.go('main')
   }
 
-
 })
 
 .controller('ProfileCtrl', function($scope, contact) {
   $scope.user = contact;
-  console.log(contact);
+  $scope.showMeInteresan = false;
+})
+
+.controller('ConfigCtrl', function($scope, $cookies) {
+  $scope.user = JSON.parse($cookies.user);
+  $scope.showMeInteresan = true;
 })

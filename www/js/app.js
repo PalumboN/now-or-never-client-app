@@ -42,7 +42,8 @@ angular.module('nan', [
     })
     .state('config', {
       url: '/config',
-      templateUrl: 'templates/config.html'
+      templateUrl: 'templates/config.html',
+      controller: 'ConfigCtrl'
     })
     .state('contactProfile', {
       url: '/profile',

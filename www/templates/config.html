@@ -12,32 +12,33 @@
   </div>
 
 </div> 
-
-<p>Me Interesan...</p>
-  <li class="item item-toggle">
-     Chicos
-     <label class="toggle toggle-positive">
-       <input type="checkbox">
-       <div class="track">
-         <div class="handle"></div>
-       </div>
-     </label>
-  </li>
-  <li class="item item-toggle">
-     Chicas
-     <label class="toggle toggle-assertive">
-       <input type="checkbox">
-       <div class="track">
-         <div class="handle"></div>
-       </div>
-     </label>
-  </li>
-    <label class="item item-input">
-        <textarea placeholder="Sobre mi" maxlength="140" rows="3"></textarea>
-    </label>
-       <button class="button button-full button-positive">
-  Guardar
-</button>
+<div ng-show="showMeInteresan">
+  <p>Me Interesan...</p>
+    <li class="item item-toggle">
+       Chicos
+       <label class="toggle toggle-positive">
+         <input type="checkbox">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+    <li class="item item-toggle">
+       Chicas
+       <label class="toggle toggle-assertive">
+         <input type="checkbox">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+      <label class="item item-input">
+          <textarea placeholder="Sobre mi" maxlength="140" rows="3"></textarea>
+      </label>
+         <button class="button button-full button-positive">
+    Guardar
+  </button>
+</div>
 
 
   </ion-content>
