@@ -36,6 +36,8 @@ module.exports = function(app) {
   return app.get('/auth/facebook/callback', passport.authenticate('facebook', {
     failureRedirect: '/'
   }), function(req, res) {
+    var url = "https://graph.facebook.com/v2.2/me/picture?access_token=" + req.user.accessToken
+    req.user.profile.picture = url
     console.log(req.user);
     res.cookie("user", JSON.stringify(req.user));
     return res.redirect('/');

@@ -3,11 +3,11 @@
  <div class="list card">
 
   <div class="item item-avatar">
-   <h2>Laura Díaz</h2>
+   <h2>{{ user.profile.displayName }}</h2>
   </div>
 
   <div class="item item-image">
-    <img src="http://blogdailyherald.com/wp-content/uploads/2014/10/wallpaper-for-facebook-profile-photo.jpg">
+    <img ng-src="{{ user.profile.picture }}">
     <i class="icon ion-edit" style="float:right"></i>
   </div>
 
