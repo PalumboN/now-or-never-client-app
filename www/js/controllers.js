@@ -4,7 +4,11 @@ angular.module('nan.controllers', [])
 
   $scope.data = {};
   $scope.myId = JSON.parse($cookies.user).profile.displayName;
-  $scope.messages = [];
+  $scope.messages = [];  
+  $scope.messageCount = 5;
+  $scope.data.message = "";
+  $scope.mminutes = 0;
+  $scope.sseconds = 5;
 
   var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
 
@@ -40,12 +44,12 @@ angular.module('nan.controllers', [])
 
   $scope.hideTime = true;
 
-  var alternate,
-    isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
+  var isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
 
   $scope.sendMessage = function() {
-    alternate = !alternate;
-
+    if ($scope.data.message.length < 1) {
+      return
+    }
     message = {
       userId: $scope.myId,
       text: $scope.data.message
@@ -53,10 +57,12 @@ angular.module('nan.controllers', [])
 
     $scope.messages.push(message);
 
-    delete $scope.data.message;
+    $scope.data.message = "";
     $ionicScrollDelegate.scrollBottom(true);
 
     socket.emit('send_message', message);
+
+    $scope.messageCount--;
   };
 
 
@@ -77,8 +83,8 @@ angular.module('nan.controllers', [])
     // cordova.plugins.Keyboard.close();
   };
 
-  $scope.myMessages = function() {
-    _.filter($scope.messages, function(it) { it.userId == $scope.myId }); 
+  $scope.timeOutBaby = function() {
+    return $scope.messageCount == 0 || ($scope.mminutes == 0 && $scope.sseconds == 0)
   };
 
 
