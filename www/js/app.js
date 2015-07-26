@@ -10,7 +10,8 @@ angular.module('nan', [
   'nan.filters',
   'nan.directives',
   'ngMap',
-  'timer'
+  'timer',
+  'ngCookies'
 ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -46,9 +47,13 @@ angular.module('nan', [
       url: '/chat',
       templateUrl: 'templates/chat.html',
       controller: 'MessagesCtrl'
+    }).state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
     })
 
 
-   $urlRouterProvider.otherwise('/main');
+   $urlRouterProvider.otherwise('/login');
 
 })

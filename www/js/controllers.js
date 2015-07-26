@@ -47,4 +47,14 @@ angular.module('nan.controllers', [])
   $scope.myId = '12345';
   $scope.messages = [];
 
-});
+})
+.controller('LoginCtrl', function($scope, $cookies, $state) {
+ $scope.getCookie = function() {
+    return $cookies.user
+  };
+  if($scope.getCookie()){
+    $state.go('main')
+  }
+
+
+})
