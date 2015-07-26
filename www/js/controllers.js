@@ -3,12 +3,11 @@ angular.module('nan.controllers', [])
 .controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory) {
 
   $scope.data = {};
-  $scope.myId = JSON.parse($cookies.user).profile.displayName;
+  $scope.me = JSON.parse($cookies.user);
   $scope.messages = [];  
   $scope.messageCount = 5;
   $scope.data.message = "";
   $scope.noMoreTime = false
-  
 
   var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
 
@@ -19,9 +18,10 @@ angular.module('nan.controllers', [])
   })(this));
 
   socket.on('find', (function(_this) {
-    return function(userNick) {
+    return function(user) {
+      $scope.contact = user
       return $scope.messages.push({
-        text: "Connected with " + userNick
+        text: "Connected with " + user.profile.displayName
       });
     };
   })(this));
@@ -31,7 +31,7 @@ angular.module('nan.controllers', [])
       $scope.messages.push({
         text: "Searching..."
       });
-      return socket.emit('searching', '@s.nick');
+      return socket.emit('searching', $scope.me);
     };
   })(this));
 
@@ -39,7 +39,7 @@ angular.module('nan.controllers', [])
     text: "Searching..."
   });
 
-  socket.emit('searching', $scope.myId);
+  socket.emit('searching', $scope.me);
 
 
   $scope.hideTime = true;
@@ -51,7 +51,7 @@ angular.module('nan.controllers', [])
       return
     }
     message = {
-      userId: $scope.myId,
+      user: $scope.me,
       text: $scope.data.message
     };
 

@@ -1,4 +1,4 @@
-<ion-view view-title="Laura Díaz, 25 años">
+<ion-view view-title="{{contact.profile.displayName}}, 25 años">
 <ion-nav-buttons side="right">
 <a href="#/config">
         <button class="button ion-person" style="border: none;
@@ -15,7 +15,7 @@
     </div>
     <hr>
 <div ng-repeat="message in messages"
-           ng-class="{other: message.userId == myId}"
+           ng-class="{other: message.user == me}"
            class="messages">
 
         <div class="message">
