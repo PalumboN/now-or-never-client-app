@@ -1,4 +1,5 @@
 var express = require('express'),
+    passport = require('./passport'),
     app = express();
 
 app.use(express.static('www'));
@@ -14,6 +15,8 @@ app.all('*', function(req, res, next) {
 // app.get('/blah', routeHandler);
 
 app.set('port', process.env.PORT || 5000);
+
+passport(app);
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
