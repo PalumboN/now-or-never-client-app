@@ -7,8 +7,8 @@ angular.module('nan.controllers', [])
   $scope.messages = [];  
   $scope.messageCount = 5;
   $scope.data.message = "";
-  $scope.mminutes = 0;
-  $scope.sseconds = 5;
+  $scope.noMoreTime = false
+  
 
   var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
 
@@ -84,8 +84,12 @@ angular.module('nan.controllers', [])
   };
 
   $scope.timeOutBaby = function() {
-    return $scope.messageCount == 0 || ($scope.mminutes == 0 && $scope.sseconds == 0)
+    return ($scope.messageCount == 0 || $scope.noMoreTime)
   };
+
+  $scope.finishCount = function () {
+      $scope.noMoreTime = true
+  }
 
 
 })
