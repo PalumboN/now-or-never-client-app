@@ -1,7 +1,11 @@
 angular.module('nan.controllers', [])
 
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, socketFactory) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory) {
 
+  console.log($cookies.user);
+
+  $scope.data = {};
+  $scope.myId = $cookies.user.profile.id;
   $scope.messages = [];
 
   var socket = socketFactory({ ioSocket: io.connect('http://localhost:3000', { forceNew: true }) });
@@ -45,7 +49,7 @@ angular.module('nan.controllers', [])
     alternate = !alternate;
 
     message = {
-      userId: 12345,
+      userId: $scope.myId,
       text: $scope.data.message
     };
 
@@ -75,10 +79,6 @@ angular.module('nan.controllers', [])
     // cordova.plugins.Keyboard.close();
   };
 
-
-  $scope.data = {};
-  $scope.myId = '12345';
-  $scope.messages = [];
 
 })
 .controller('LoginCtrl', function($scope, $cookies, $state) {
