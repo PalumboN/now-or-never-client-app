@@ -1,6 +1,6 @@
 angular.module('nan.controllers', [])
 
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory, httpService) {
 
   $scope.data = {};
   $scope.me = JSON.parse($cookies.user);
@@ -8,6 +8,13 @@ angular.module('nan.controllers', [])
   $scope.messageCount = 5;
   $scope.data.message = "";
   $scope.noMoreTime = false
+
+  var setPicture = function(user) { 
+    var url = "https://graph.facebook.com/v2.2/me/picture?access_token=" + user.accessToken;
+    return httpService.get(url).then(function(picture) { 
+      user.profile.picture = picture;
+    });
+  };
 
   var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
 
@@ -19,7 +26,8 @@ angular.module('nan.controllers', [])
 
   socket.on('find', (function(_this) {
     return function(user) {
-      $scope.contact = user
+      setPicture(user);
+      $scope.contact = user;
       return $scope.messages.push({
         text: "Connected with " + user.profile.displayName
       });
