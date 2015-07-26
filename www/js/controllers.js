@@ -6,7 +6,7 @@ angular.module('nan.controllers', [])
   $scope.myId = JSON.parse($cookies.user).profile.displayName;
   $scope.messages = [];
 
-  var socket = socketFactory({ ioSocket: io.connect('http://localhost:3000', { forceNew: true }) });
+  var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
 
   socket.on('new_message', (function(_this) {
     return function(message) {
@@ -74,6 +74,10 @@ angular.module('nan.controllers', [])
 
   $scope.closeKeyboard = function() {
     // cordova.plugins.Keyboard.close();
+  };
+
+  $scope.myMessages = function() {
+    _.filter($scope.messages, function(it) { it.userId == $scope.myId }); 
   };
 
 
