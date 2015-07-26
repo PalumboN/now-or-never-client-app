@@ -37,8 +37,7 @@ angular.module('nan', [
   $stateProvider
     .state('main', {
       url: '/main',
-      templateUrl: 'templates/main.html',
-      controller: 'MessagesCtrl'
+      templateUrl: 'templates/main.html'
     })
     .state('config', {
       url: '/config',
