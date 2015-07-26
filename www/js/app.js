@@ -5,6 +5,7 @@ angular.module('underscore', [])
 
 angular.module('nan', [
   'ionic',
+  'btford.socket-io',
   'nan.controllers',
   'nan.services',
   'nan.filters',

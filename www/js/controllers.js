@@ -1,6 +1,40 @@
 angular.module('nan.controllers', [])
 
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, socketFactory) {
+
+  $scope.messages = [];
+
+  var socket = socketFactory({ ioSocket: io.connect('http://localhost:3000', { forceNew: true }) });
+
+  socket.on('new_message', (function(_this) {
+    return function(message) {
+      return $scope.messages.push(message);
+    };
+  })(this));
+
+  socket.on('find', (function(_this) {
+    return function(userNick) {
+      return $scope.messages.push({
+        text: "Connected with " + userNick
+      });
+    };
+  })(this));
+
+  socket.on('lost_user', (function(_this) {
+    return function() {
+      $scope.messages.push({
+        text: "Searching..."
+      });
+      return socket.emit('searching', '@s.nick');
+    };
+  })(this));
+
+  $scope.messages.push({
+    text: "Searching..."
+  });
+
+  socket.emit('searching', '@s.nick');
+
 
   $scope.hideTime = true;
 
@@ -10,18 +44,17 @@ angular.module('nan.controllers', [])
   $scope.sendMessage = function() {
     alternate = !alternate;
 
-    var d = new Date();
-  d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
+    message = {
+      userId: 12345,
+      text: $scope.data.message
+    };
 
-    $scope.messages.push({
-      userId: alternate ? '12345' : '54321',
-      text: $scope.data.message,
-      time: d
-    });
+    $scope.messages.push(message);
 
     delete $scope.data.message;
     $ionicScrollDelegate.scrollBottom(true);
 
+    socket.emit('send_message', message);
   };
 
 
