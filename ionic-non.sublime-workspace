@@ -1,0 +1,557 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fa",
+				"false"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"mess",
+				"message"
+			],
+			[
+				"log",
+				"loginDoc"
+			],
+			[
+				"so",
+				"socketProvider"
+			],
+			[
+				"pro",
+				"profile"
+			],
+			[
+				"messa",
+				"messageCount"
+			],
+			[
+				"oth",
+				"otherClient"
+			],
+			[
+				"che",
+				"check"
+			],
+			[
+				"one",
+				"oneClient"
+			],
+			[
+				"cli",
+				"client"
+			],
+			[
+				"sock",
+				"socketServer"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"soc",
+				"socket"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"la",
+				"laPosta"
+			],
+			[
+				"te",
+				"text"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "www/js/app.js",
+			"settings":
+			{
+				"buffer_size": 2367,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/controllers.js",
+			"settings":
+			{
+				"buffer_size": 3132,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ionic.project",
+			"settings":
+			{
+				"buffer_size": 174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/index.html",
+			"settings":
+			{
+				"buffer_size": 2537,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ionic-non.sublime-project",
+			"settings":
+			{
+				"buffer_size": 349,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/templates/login.html",
+			"settings":
+			{
+				"buffer_size": 427,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.xml",
+			"settings":
+			{
+				"buffer_size": 5102,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 288.0,
+		"selected_items":
+		[
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: I",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/platforms/android/assets/www/cordova_plugins.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/platforms/android/assets/www/js/controllers.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/templates/login.html",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/config.xml",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/index.html",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/process.env",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/templates/chat.html",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/templates/config.html",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/js/controllers.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/passport.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/server.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/ionic.project",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/package.json",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/bower.json",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/js/app.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/js/services.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/js/angular-timer.min.js",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/ionic-non.sublime-project",
+		"/C/Users/Yumbo/Documents/GitHub/ionic-non/www/lib/angular-socket-io/socket.min.js",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/server/routes/chat_servidor.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/layout.jade",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/public/app.js",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/server/passport.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/server/strategies/facebookStrategy.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/scripts/chatCtrl.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/app.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/partials/login.jade",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/partials/chat.jade",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/scripts/_baseCtrl.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/bower.json",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/server/server.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/Gruntfile.js",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/public/javascripts/chat_cliente.js",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/scripts/loginCtrl.coffee",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/partials/home.jade",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/main.jade",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/chat.jade",
+		"/C/Users/Yumbo/Documents/GitHub/now-or-never/app/views/index.jade"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"inappbrowser.js",
+			"localhost:3000",
+			"\n  ",
+			"172.17.31.99",
+			"httpService",
+			"\"@s.nick\"",
+			"<<<<<<< HEAD",
+			"HEAD",
+			"@s",
+			"userNick",
+			"myId",
+			"myid",
+			"timer",
+			"alternate",
+			"http://localhost:3000",
+			"coffee",
+			"express-keepalive",
+			"build",
+			"localhost",
+			"_",
+			"messaje",
+			"->\n",
+			"()\n",
+			"socket",
+			"\"\n",
+			" \n",
+			"()\n",
+			"module.",
+			"  }",
+			"}\n",
+			"Trolo",
+			"name",
+			"gil",
+			"h1",
+			"Express",
+			"express",
+			"    \n",
+			"express",
+			"coffee"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "www/js/app.js",
+					"settings":
+					{
+						"buffer_size": 2367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/controllers.js",
+					"settings":
+					{
+						"buffer_size": 3132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2303,
+								2303
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1713.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ionic.project",
+					"settings":
+					{
+						"buffer_size": 174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								58,
+								58
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/index.html",
+					"settings":
+					{
+						"buffer_size": 2537,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1387,
+								1387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 671.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ionic-non.sublime-project",
+					"settings":
+					{
+						"buffer_size": 349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								349,
+								349
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/templates/login.html",
+					"settings":
+					{
+						"buffer_size": 427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "config.xml",
+					"settings":
+					{
+						"buffer_size": 5102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1064,
+								1076
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"contro",
+				"www/js/controllers.js"
+			],
+			[
+				"config",
+				"www/templates/config.html"
+			],
+			[
+				"contr",
+				"www/js/controllers.js"
+			],
+			[
+				"inde",
+				"www/index.html"
+			],
+			[
+				"la",
+				"app/views/layout.jade"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true
+}

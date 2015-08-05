@@ -1,6 +1,6 @@
 {
-  "name": "nan",
-  "app_id": "6d3f6445",
+  "name": "now-or-never-client",
+  "app_id": "5580cb56",
   "gulpStartupTasks": [
     "sass",
     "watch"

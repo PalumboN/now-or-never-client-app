@@ -1,16 +1,14 @@
 
+<ion-view hide-nav-bar="true" title="'Home'">
+  <ion-content has-header="false" padding="true">
+    <img src="http://i.imgur.com/Sy7hdTK.png" width="80%"  style="margin-top:40%;margin-left:10%"/>
 
-            <ion-view hide-nav-bar="true" title="'Home'">
-        <ion-content has-header="false" padding="true">
-          <img src="http://i.imgur.com/Sy7hdTK.png" width="80%"  style="margin-top:40%;margin-left:10%"/>
-
-        </ion-content>
-        <a href="/auth/facebook">
-        <button class="button button-full button-positive" style="position:absolute;
-bottom:0;margin:0" ng-click="getCookie()">
-          Login with Facebook
-        </button>
-        </a>
-      </ion-view>
+  </ion-content>
+  
+  <button class="button button-full button-positive" style="position:absolute;bottom:0;margin:0" ng-click="faceLogin()">
+    Login with Facebook {{ user.profile.displayName }}
+  </button>
+  </a>
+</ion-view>
 
 

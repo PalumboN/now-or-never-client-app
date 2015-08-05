@@ -1,5 +1,5 @@
 angular.module('nan.controllers', [])
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory, contact) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, $state, socketProvider, contact) {
 
   $scope.data = {};
   $scope.me = JSON.parse($cookies.user);
@@ -8,7 +8,9 @@ angular.module('nan.controllers', [])
   $scope.data.message = "";
   $scope.noMoreTime = false
 
-  var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
+  var socket = socketProvider.current;
+
+  socket.connect();
 
   socket.on('new_message', (function(_this) {
     return function(message) {
@@ -94,12 +96,28 @@ angular.module('nan.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $cookies, $state) {
- $scope.getCookie = function() {
-    return $cookies.user
-  };
-  if($scope.getCookie()){
+
+  if($cookies.user) {
     $state.go('main')
-  }
+  };
+
+  var loginDoc = null;
+
+  window.onmessage = window.message = function (event) {
+    var key = event.message ? "message" : "data";
+    //$cookies.user = JSON.stringify(event[key]);
+    $scope.user = event[key];
+    //$state.go('main')
+  };
+
+  $scope.faceLogin = function() {
+    loginDoc = window.open('http://now-or-never-server.herokuapp.com/auth/facebook', '_blank', 'location=yes, toolbar=yes, EnableViewPortScale=yes');
+    
+    window.addEventListener("message", window.onmessage, false);
+    loginDoc.addEventListener("message", window.onmessage, false);
+
+    loginDoc.addEventListener("loadstop", function(e){ console.log("zsczs"); });
+  };
 
 })
 

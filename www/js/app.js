@@ -11,12 +11,16 @@ angular.module('nan', [
   'nan.filters',
   'nan.directives',
   'ngMap',
+  'ngCordova',
   'timer',
   'jlareau.pnotify',
   'ngCookies'
 ])
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $window) {
   $ionicPlatform.ready(function() {
+    console.log($window.cordova);
+    console.log(window.plugins);
+    console.log(window.ionic);
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -53,8 +57,17 @@ angular.module('nan', [
     .state('chat', {
       url: '/chat',
       templateUrl: 'templates/chat.html',
-      controller: 'MessagesCtrl'
-    }).state('login', {
+      controller: 'MessagesCtrl',
+      onEnter: function(socketProvider){
+        socketProvider.current.connect()
+        console.log("Connected");
+      },
+      onExit: function(socketProvider){
+        socketProvider.current.disconnect()
+        console.log("Disconnected");
+      }
+    })
+    .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
       controller: 'LoginCtrl'
@@ -66,4 +79,9 @@ angular.module('nan', [
 })
 
 
-.factory("contact",function() { return {}; });
+.factory("contact",function() { return {}; })
+
+
+.factory("socketProvider", function(socketFactory) { 
+  return { current: socketFactory({ ioSocket: io.connect('http://now-or-never-server.herokuapp.com', { forceNew: true }) }) };
+});
