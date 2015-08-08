@@ -84,7 +84,7 @@ angular.module('nan', [
 })
 
 
-.factory("facebookApi", function($q) { 
+.factory("facebookApi", function($q, $http) { 
 
   var
     loginWindow = null, 
@@ -93,6 +93,7 @@ angular.module('nan', [
     redirectURL = "http://now-or-never-server.herokuapp.com/auth/facebook/callback",
     cordovaOAuthRedirectURL = "https://www.facebook.com/connect/login_success.html",
     scope = "email",
+    baseApiUrl = "https://graph.facebook.com/v2.4",
     loginProcessed = false;
 
 
@@ -190,9 +191,20 @@ angular.module('nan', [
     return deferred.promise;
   };
 
+  var getUser = function() {
+    var
+      resource = "/me",
+      fields = "gender,name,picture.type(large),birthday,email,cover";
+
+    var url = baseApiUrl + resource + "?fields=" + fields + "&access_token=" + window.sessionStorage.accessToken;
+
+    return $http.get(url).then(function(response){ return response.data });
+  };
+
   return {
     runningCordova: function(){ return window.runningCordova },
-    login: login
+    login: login,
+    getUser: getUser
   };
 });
 
