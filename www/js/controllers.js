@@ -95,28 +95,18 @@ angular.module('nan.controllers', [])
 
 })
 
-.controller('LoginCtrl', function($scope, $cookies, $state) {
+.controller('LoginCtrl', function($scope, $cookies, $state, facebookApi) {
 
   if($cookies.user) {
     $state.go('main')
   };
 
-  var loginDoc = null;
-
-  window.onmessage = window.message = function (event) {
-    var key = event.message ? "message" : "data";
-    //$cookies.user = JSON.stringify(event[key]);
-    $scope.user = event[key];
-    //$state.go('main')
-  };
-
-  $scope.faceLogin = function() {
-    loginDoc = window.open('http://now-or-never-server.herokuapp.com/auth/facebook', '_blank', 'location=yes, toolbar=yes, EnableViewPortScale=yes');
-    
-    window.addEventListener("message", window.onmessage, false);
-    loginDoc.addEventListener("message", window.onmessage, false);
-
-    loginDoc.addEventListener("loadstop", function(e){ console.log("zsczs"); });
+  $scope.faceLogin = function(){
+    facebookApi.login().then(function(user){
+      console.log(user);
+      //$cookies.user = JSON.stringify(user);
+      //$state.go('main')
+    })
   };
 
 })

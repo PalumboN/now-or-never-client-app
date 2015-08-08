@@ -18,9 +18,6 @@ angular.module('nan', [
 ])
 .run(function($ionicPlatform, $window) {
   $ionicPlatform.ready(function() {
-    console.log($window.cordova);
-    console.log(window.plugins);
-    console.log(window.ionic);
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -84,4 +81,41 @@ angular.module('nan', [
 
 .factory("socketProvider", function(socketFactory) { 
   return { current: socketFactory({ ioSocket: io.connect('http://now-or-never-server.herokuapp.com', { forceNew: true }) }) };
+})
+
+
+.factory("facebookApi", function($q) { 
+
+  var 
+    loginURL = 'https://www.facebook.com/dialog/oauth',
+    fbAppId = "984062531613818",
+    redirectURL = "http://now-or-never-server.herokuapp.com/auth/facebook/callback",
+    cordovaOAuthRedirectURL = "https://www.facebook.com/connect/login_success.html",
+    scope = "email";
+
+  var onmessage = function (promise) { 
+    return function (event) {
+      var key = event.message ? "message" : "data";
+      promise.resolve(event[key]);
+    }
+  };
+
+
+  var login = function() {
+    var deferred = $q.defer();
+
+    var loginWindow = window.open(loginURL + '?client_id=' + fbAppId + '&redirect_uri=' + redirectURL +
+      '&response_type=token&scope=' + scope, '_blank', 'location=no,clearcache=yes');
+
+    window.addEventListener("message", onmessage(deferred), false);
+    loginWindow.addEventListener("message", onmessage(deferred), false);
+
+    return deferred.promise;
+  };
+
+
+  return {
+    login: login
+  }; 
+
 });
