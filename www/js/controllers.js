@@ -92,20 +92,20 @@ angular.module('nan.controllers', [])
       $scope.noMoreTime = true
   }
 
-
 })
 
-.controller('LoginCtrl', function($scope, $cookies, $state, facebookApi) {
+.controller('LoginCtrl', function($scope, $state, facebookApi) {
 
-  if($cookies.user) {
+  if(window.sessionStorage.accessToken) {
     $state.go('main')
   };
 
-  $scope.faceLogin = function(){
-    facebookApi.login().then(function(user){
-      console.log(user);
-      //$cookies.user = JSON.stringify(user);
-      //$state.go('main')
+  $scope.faceLogin = function() {
+    facebookApi.login().then(function(data) {
+      console.log(data);
+      
+      window.sessionStorage.accessToken = data.accessToken;
+      window.location.reload();
     })
   };
 
