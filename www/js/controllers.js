@@ -1,14 +1,16 @@
 angular.module('nan.controllers', [])
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $cookies, socketFactory, contact) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $state, socketProvider, contact) {
 
   $scope.data = {};
-  $scope.me = JSON.parse($cookies.user);
+  $scope.me = JSON.parse(window.sessionStorage.user);
   $scope.messages = [];  
   $scope.messageCount = 5;
   $scope.data.message = "";
   $scope.noMoreTime = false
 
-  var socket = socketFactory({ ioSocket: io.connect('http://172.17.31.99:3000', { forceNew: true }) });
+  var socket = socketProvider.current;
+
+  socket.connect();
 
   socket.on('new_message', (function(_this) {
     return function(message) {
@@ -19,9 +21,9 @@ angular.module('nan.controllers', [])
   socket.on('find', (function(_this) {
     return function(user) {
       $scope.contact = user;
-      contact.profile = user.profile;
+      contact.profile = user;
       $scope.messages.push({
-        text: "Connected with " + user.profile.displayName
+        text: "Connected with " + user.name
       });
     };
   })(this));
@@ -90,16 +92,29 @@ angular.module('nan.controllers', [])
       $scope.noMoreTime = true
   }
 
-
 })
 
-.controller('LoginCtrl', function($scope, $cookies, $state) {
- $scope.getCookie = function() {
-    return $cookies.user
+.controller('LoginCtrl', function($scope, $state, facebookApi) {
+
+  if(window.sessionStorage.user) {
+    console.log(window.sessionStorage.user);
+    $state.go('main');
   };
-  if($scope.getCookie()){
-    $state.go('main')
-  }
+
+  $scope.faceLogin = function() {
+    facebookApi.login().then(function(data) {
+      console.log(data);
+      
+      window.sessionStorage.accessToken = data.accessToken;
+
+      facebookApi.getUser().then(function(user) {
+        window.sessionStorage.user = JSON.stringify(user);
+
+        window.location.reload();
+      });
+      
+    });
+  };
 
 })
 
@@ -108,7 +123,7 @@ angular.module('nan.controllers', [])
   $scope.showMeInteresan = false;
 })
 
-.controller('ConfigCtrl', function($scope, $cookies) {
-  $scope.user = JSON.parse($cookies.user);
+.controller('ConfigCtrl', function($scope) {
+  $scope.user = JSON.parse(window.sessionStorage.user);
   $scope.showMeInteresan = true;
 })
