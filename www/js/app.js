@@ -84,7 +84,7 @@ angular.module('nan', [
 })
 
 
-.factory("facebookApi", function($q, $http) { 
+.factory("facebookApi", function($q, $http, $cookies) { 
 
   var
     loginWindow = null, 
@@ -196,7 +196,7 @@ angular.module('nan', [
       resource = "/me",
       fields = "gender,name,picture.type(large),birthday,email,cover";
 
-    var url = baseApiUrl + resource + "?fields=" + fields + "&access_token=" + window.sessionStorage.accessToken;
+    var url = baseApiUrl + resource + "?fields=" + fields + "&access_token=" + $cookies.accessToken;
 
     return $http.get(url).then(function(response){ return response.data });
   };
@@ -206,7 +206,32 @@ angular.module('nan', [
     login: login,
     getUser: getUser
   };
+})
+
+
+.factory("geolocation", function($cordovaGeolocation) { 
+
+  var position = {},
+      posOptions = { timeout: 10000, maximumAge: 1000 * 60 * 60 * 8, enableHighAccuracy: false };
+
+  $cordovaGeolocation
+    .getCurrentPosition(posOptions)
+    .then(function (pos) {
+      position.latitude = pos.coords.latitude; 
+      position.longitude = pos.coords.longitude;
+    }, function(err) {
+      console.log(err);
+    });
+
+  return {
+    currentPosition: position 
+  };
+
 });
+
+
+
+
 
 document.addEventListener("deviceready", function () {
   window.runningCordova = true;

@@ -1,8 +1,8 @@
 angular.module('nan.controllers', [])
-.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $state, socketProvider, contact) {
+.controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $state, $cookies, socketProvider, contact) {
 
   $scope.data = {};
-  $scope.me = JSON.parse(window.sessionStorage.user);
+  $scope.me = JSON.parse($cookies.user);
   $scope.messages = [];  
   $scope.messageCount = 5;
   $scope.data.message = "";
@@ -94,21 +94,22 @@ angular.module('nan.controllers', [])
 
 })
 
-.controller('LoginCtrl', function($scope, $state, facebookApi) {
+.controller('LoginCtrl', function($scope, $state, $cookies, facebookApi, geolocation) {
 
-  if(window.sessionStorage.user) {
-    console.log(window.sessionStorage.user);
+  if($cookies.user) {
     $state.go('main');
   };
 
   $scope.faceLogin = function() {
     facebookApi.login().then(function(data) {
-      console.log(data);
-      
-      window.sessionStorage.accessToken = data.accessToken;
+
+      $cookies.accessToken = data.accessToken;
 
       facebookApi.getUser().then(function(user) {
-        window.sessionStorage.user = JSON.stringify(user);
+
+        user.location = geolocation.currentPosition
+
+        $cookies.user = JSON.stringify(user);
 
         window.location.reload();
       });
@@ -123,7 +124,7 @@ angular.module('nan.controllers', [])
   $scope.showMeInteresan = false;
 })
 
-.controller('ConfigCtrl', function($scope) {
-  $scope.user = JSON.parse(window.sessionStorage.user);
+.controller('ConfigCtrl', function($scope, $cookies) {
+  $scope.user = JSON.parse($cookies.user);
   $scope.showMeInteresan = true;
 })
