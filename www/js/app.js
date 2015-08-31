@@ -84,7 +84,7 @@ angular.module('nan', [
 })
 
 
-.factory("facebookApi", function($q, $http) { 
+.factory("facebookApi", function($q, $http, $cookies) { 
 
   var
     loginWindow = null, 
@@ -196,7 +196,7 @@ angular.module('nan', [
       resource = "/me",
       fields = "gender,name,picture.type(large),birthday,email,cover";
 
-    var url = baseApiUrl + resource + "?fields=" + fields + "&access_token=" + window.sessionStorage.accessToken;
+    var url = baseApiUrl + resource + "?fields=" + fields + "&access_token=" + $cookies.accessToken;
 
     return $http.get(url).then(function(response){ return response.data });
   };
@@ -207,6 +207,7 @@ angular.module('nan', [
     getUser: getUser
   };
 })
+
 
 .factory("geolocation", function($cordovaGeolocation) { 
 
