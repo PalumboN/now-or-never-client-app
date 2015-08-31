@@ -94,7 +94,7 @@ angular.module('nan.controllers', [])
 
 })
 
-.controller('LoginCtrl', function($scope, $state, facebookApi) {
+.controller('LoginCtrl', function($scope, $state, facebookApi, geolocation) {
 
   if(window.sessionStorage.user) {
     console.log(window.sessionStorage.user);
@@ -103,11 +103,15 @@ angular.module('nan.controllers', [])
 
   $scope.faceLogin = function() {
     facebookApi.login().then(function(data) {
+
       console.log(data);
       
       window.sessionStorage.accessToken = data.accessToken;
 
       facebookApi.getUser().then(function(user) {
+
+        user.location = geolocation.currentPosition
+
         window.sessionStorage.user = JSON.stringify(user);
 
         window.location.reload();

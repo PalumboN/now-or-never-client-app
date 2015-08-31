@@ -1,7 +1,7 @@
 {
-  "name": "jsconfuy",
+  "name": "non-app",
   "version": "1.0.0",
-  "description": "jsconfuy: An Ionic project",
+  "description": "Mobile client for Now or Never App",
   "scripts": {
     "postinstall": "bower install"
   },
@@ -25,7 +25,8 @@
     "org.apache.cordova.device",
     "org.apache.cordova.console",
     "com.ionic.keyboard",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "org.apache.cordova.geolocation"
   ],
   "cordovaPlatforms": [
     "android"
