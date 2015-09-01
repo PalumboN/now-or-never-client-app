@@ -1,6 +1,23 @@
 angular.module('nan.controllers', [])
+
+.controller('SearchCtrl', function($scope, $state, $cookies, socketProvider, contact) {
+
+  var socket = socketProvider.current;
+  $scope.me = JSON.parse($cookies.user);
+
+  socket.on('find',  function(user) {
+    console.log(user);
+    contact.profile = user;
+    $state.go("chat", user);
+  });
+
+  socket.emit('searching', $scope.me);
+})
+
+
 .controller('MessagesCtrl', function($scope, $timeout, $ionicScrollDelegate, $state, $cookies, socketProvider, contact) {
 
+  $scope.contact = contact.profile;
   $scope.data = {};
   $scope.me = JSON.parse($cookies.user);
   $scope.messages = [];  
@@ -10,23 +27,12 @@ angular.module('nan.controllers', [])
 
   var socket = socketProvider.current;
 
-  socket.connect();
-
   socket.on('new_message', (function(_this) {
     return function(message) {
       return $scope.messages.push(message);
     };
   })(this));
 
-  socket.on('find', (function(_this) {
-    return function(user) {
-      $scope.contact = user;
-      contact.profile = user;
-      $scope.messages.push({
-        text: "Connected with " + user.name
-      });
-    };
-  })(this));
 
   socket.on('lost_user', (function(_this) {
     return function() {
@@ -36,12 +42,6 @@ angular.module('nan.controllers', [])
       return socket.emit('searching', $scope.me);
     };
   })(this));
-
-  $scope.messages.push({
-    text: "Searching..."
-  });
-
-  socket.emit('searching', $scope.me);
 
   $scope.hideTime = true;
 
@@ -120,7 +120,7 @@ angular.module('nan.controllers', [])
 })
 
 .controller('ProfileCtrl', function($scope, contact) {
-  $scope.user = contact;
+  $scope.user = contact.profile;
   $scope.showMeInteresan = false;
 })
 
