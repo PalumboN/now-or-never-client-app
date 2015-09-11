@@ -96,6 +96,32 @@ angular.module('nan.controllers', [])
 
 .controller('LoginCtrl', function($scope, $state, $cookies, facebookApi, geolocation) {
 
+  // var yo = {
+  //   birthday: "04/18/1993",
+  //   cover: {
+  //     id: "10204933777479410",
+  //     offset_y: 24,
+  //     source: "https://scontent.xx.fbcdn.net/hphotos-xpt1/t31.0-8/q82/s720x720/10520821_10204933777479410_7465816825665442407_o.jpg"
+  //   },
+  //   email: "nahueljumbo@hotmail.com",
+  //   gender: "male",
+  //   id: "10206329532532414",
+  //   location: {
+  //     latitude: -34.5820151,
+  //     longitude: -58.432307599999994
+  //   },
+  //   name: "Nahuel Palumbo",
+  //   picture: {
+  //     data: {
+  //       is_silhouette: false,
+  //       url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p200x200/10888368_10204785596694983_6656199760302407731_n.jpg?oh=b60e07b88d75e21d47cd73c82b5ca237&oe=5677C684&__gda__=1453452819_6e34277b43b41167496e14b4e060c47a"    
+  //     }
+  //   }
+  // }
+
+  // $cookies.user = JSON.stringify(yo);
+
+
   if($cookies.user) {
     $state.go('main');
   };
