@@ -103,7 +103,7 @@
 			"file": "www/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 2867,
+				"buffer_size": 3747,
 				"line_ending": "Windows"
 			}
 		},
@@ -111,15 +111,25 @@
 			"file": "www/index.html",
 			"settings":
 			{
-				"buffer_size": 3280,
+				"buffer_size": 3252,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control:\n---------------\n\n  Version 3.1 Release Notes\n  \n  Package Control continues its focus on polish and fixing edge-case bugs. Some\n  of the changes in this version include:\n  \n   - quick panel for Install Package now stays open on Windows with recent\n     versions of ST3, even when focus is lost\n   - new \"downloader_precedence\" setting to allow users to use specific HTTP\n     backend due to network proxy or SSL issues\n   - added Install Local Dependency command for package developers to more\n     easily deal with dependencies during development\n   - improved handling of git/hg package upgrade errors\n   - better handling of locked .sublime-package files on Windows\n   - performance improvements for users with a large number of open windows\n  \n  For package developers, the list of available dependencies has been growing:\n  https://github.com/wbond/package_control_channel/blob/master/repository/dependencies.json\n  \n  Enjoy!\n  \n  ",
+			"settings":
+			{
+				"buffer_size": 1004,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"scratch": true
 			}
 		},
 		{
 			"file": "www/templates/login.html",
 			"settings":
 			{
-				"buffer_size": 262,
+				"buffer_size": 268,
 				"line_ending": "Windows"
 			}
 		},
@@ -127,7 +137,7 @@
 			"file": "www/templates/main.html",
 			"settings":
 			{
-				"buffer_size": 353,
+				"buffer_size": 401,
 				"line_ending": "Unix"
 			}
 		},
@@ -135,7 +145,7 @@
 			"file": "www/templates/chat.html",
 			"settings":
 			{
-				"buffer_size": 1639,
+				"buffer_size": 1873,
 				"line_ending": "Unix"
 			}
 		},
@@ -143,7 +153,7 @@
 			"file": "www/templates/config.html",
 			"settings":
 			{
-				"buffer_size": 1142,
+				"buffer_size": 1301,
 				"line_ending": "Unix"
 			}
 		}
@@ -151,9 +161,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 288.0,
+		"height": 75.0,
 		"selected_items":
 		[
+			[
+				"comme",
+				"Toggle Comment"
+			],
 			[
 				"Package Control: i",
 				"Package Control: Install Package"
@@ -163,7 +177,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -333,7 +347,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -348,8 +362,8 @@
 						"selection":
 						[
 							[
-								54,
-								54
+								1798,
+								1798
 							]
 						],
 						"settings":
@@ -359,7 +373,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -369,15 +383,15 @@
 					"file": "www/js/controllers.js",
 					"settings":
 					{
-						"buffer_size": 2867,
+						"buffer_size": 3747,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								167,
-								167
+								0,
+								0
 							]
 						],
 						"settings":
@@ -397,15 +411,15 @@
 					"file": "www/index.html",
 					"settings":
 					{
-						"buffer_size": 3280,
+						"buffer_size": 3252,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								995,
-								995
+								1263,
+								1263
 							]
 						],
 						"settings":
@@ -415,25 +429,52 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 689.0,
+						"translation.y": 860.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "www/templates/login.html",
 					"settings":
 					{
-						"buffer_size": 262,
+						"buffer_size": 1004,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								236,
-								236
+								1004,
+								1004
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/templates/login.html",
+					"settings":
+					{
+						"buffer_size": 268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
 							]
 						],
 						"settings":
@@ -447,45 +488,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "www/templates/main.html",
 					"settings":
 					{
-						"buffer_size": 353,
+						"buffer_size": 401,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								298,
-								298
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 17.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "www/templates/chat.html",
-					"settings":
-					{
-						"buffer_size": 1639,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1627,
-								1627
+								14,
+								14
 							]
 						],
 						"settings":
@@ -495,25 +510,53 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 77.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "www/templates/config.html",
+					"file": "www/templates/chat.html",
 					"settings":
 					{
-						"buffer_size": 1142,
+						"buffer_size": 1873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								41,
+								41
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/templates/config.html",
+					"settings":
+					{
+						"buffer_size": 1301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
 							]
 						],
 						"settings":
