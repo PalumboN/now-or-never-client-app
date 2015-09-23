@@ -145,12 +145,18 @@ angular.module('nan.controllers', [])
 
 })
 
-.controller('ProfileCtrl', function($scope, contact) {
+.controller('ProfileCtrl', function($scope, $ionicHistory, contact) {
   $scope.user = contact.profile;
   $scope.showMeInteresan = false;
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
 })
 
-.controller('ConfigCtrl', function($scope, $cookies) {
+.controller('ConfigCtrl', function($scope, $ionicHistory, $cookies) {
   $scope.user = JSON.parse($cookies.user);
   $scope.showMeInteresan = true;
+  $scope.goBack = function() {
+    $ionicHistory.goBack();
+  };
 })

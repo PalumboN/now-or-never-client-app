@@ -1,14 +1,14 @@
-<ion-view view-title="{{contact.name}}">
+<ion-view>
   <ion-nav-bar>
     <ion-nav-buttons side="left">
-      <a href="#/main">
-        <button class="button-clear">
-          <i class="ion-arrow-left-c"></i> Back
-        </button>
-      </a>
+    <a nav-direction="back" class="button icon-left ion-chevron-left button-clear">Back</a>
     </ion-nav-buttons>
   </ion-nav-bar>
-    
+
+  <div class="bar bar-header">
+    <h2 class="title">{{contact.name}}, 18</h1>
+  </div>
+
 <ion-nav-buttons side="right">
 <a href="#/profile">
         <button class="button ion-person" style="border: none;
