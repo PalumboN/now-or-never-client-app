@@ -39,7 +39,12 @@ angular.module('nan', [
   $stateProvider
     .state('main', {
       url: '/main',
-      templateUrl: 'templates/main.html'
+      templateUrl: 'templates/main.html',
+      controller: 'SearchCtrl',
+      onEnter: function(socketProvider){
+        socketProvider.current.connect()
+        console.log("Connected");
+      }
     })
     .state('config', {
       url: '/config',
@@ -55,19 +60,15 @@ angular.module('nan', [
       url: '/chat',
       templateUrl: 'templates/chat.html',
       controller: 'MessagesCtrl',
-      onEnter: function(socketProvider){
-        socketProvider.current.connect()
-        console.log("Connected");
-      },
-      onExit: function(socketProvider){
-        socketProvider.current.disconnect()
-        console.log("Disconnected");
-      }
     })
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
-      controller: 'LoginCtrl'
+      controller: 'LoginCtrl',
+      onEnter: function(socketProvider){
+        socketProvider.current.disconnect()
+        console.log("Disconnected");
+      }
     })
 
 

@@ -1,20 +1,24 @@
-<ion-view view-title="Configuración">
-<ion-content class="padding">
- <div class="list card">
-
-  <div class="item item-avatar">
-   <h2>{{ user.name + ' (' + user.birthday + ')' }}</h2>
+<ion-view>
+  <div class="bar bar-header">
+    <a nav-direction="back" ng-click="goBack()" class="button icon-left ion-chevron-left button-clear">Back</a>
+    <h2 class="title">{{user.name}}, 18</h1>
   </div>
 
-  <div class="item item-image">
-    <img ng-src="{{ user.picture.data.url }}">
-    <i class="icon ion-edit" style="float:right"></i>
-  </div>
+  <ion-content class="content-view config padding">
+    <div class="list card">
+      <div class="item item-image">
+        <img ng-src="{{ user.picture.data.url }}">
+      </div>
 
-</div> 
-<div ng-show="showMeInteresan">
-  <p>Me Interesan...</p>
-    <li class="item item-toggle">
+    </div> 
+
+    <label class="item item-input">
+      <textarea placeholder="Sobre mi" maxlength="140" rows="3"></textarea>
+    </label>
+    &nbsp
+    <div ng-show="showMeInteresan">
+      <p>Me Interesan...</p>
+      <li class="item item-toggle">
        Chicos
        <label class="toggle toggle-positive">
          <input type="checkbox">
@@ -22,8 +26,8 @@
            <div class="handle"></div>
          </div>
        </label>
-    </li>
-    <li class="item item-toggle">
+     </li>
+     <li class="item item-toggle">
        Chicas
        <label class="toggle toggle-assertive">
          <input type="checkbox">
@@ -31,14 +35,8 @@
            <div class="handle"></div>
          </div>
        </label>
-    </li>
-      <label class="item item-input">
-          <textarea placeholder="Sobre mi" maxlength="140" rows="3"></textarea>
-      </label>
-         <button class="button button-full button-positive">
-    Guardar
-  </button>
-</div>
+     </li>
+  </div>
 
   </ion-content>
 </ion-view>

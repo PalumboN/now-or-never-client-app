@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"coo",
+				"cookies"
+			],
+			[
 				"fa",
 				"false"
 			],
@@ -79,7 +95,7 @@
 			"file": "www/js/app.js",
 			"settings":
 			{
-				"buffer_size": 6791,
+				"buffer_size": 7295,
 				"line_ending": "Windows"
 			}
 		},
@@ -87,58 +103,41 @@
 			"file": "www/js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 3522,
+				"buffer_size": 3747,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "ionic.project",
-			"settings":
-			{
-				"buffer_size": 174,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "www/index.html",
 			"settings":
 			{
-				"buffer_size": 2899,
+				"buffer_size": 3252,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control:\n---------------\n\n  Version 3.1 Release Notes\n  \n  Package Control continues its focus on polish and fixing edge-case bugs. Some\n  of the changes in this version include:\n  \n   - quick panel for Install Package now stays open on Windows with recent\n     versions of ST3, even when focus is lost\n   - new \"downloader_precedence\" setting to allow users to use specific HTTP\n     backend due to network proxy or SSL issues\n   - added Install Local Dependency command for package developers to more\n     easily deal with dependencies during development\n   - improved handling of git/hg package upgrade errors\n   - better handling of locked .sublime-package files on Windows\n   - performance improvements for users with a large number of open windows\n  \n  For package developers, the list of available dependencies has been growing:\n  https://github.com/wbond/package_control_channel/blob/master/repository/dependencies.json\n  \n  Enjoy!\n  \n  ",
+			"settings":
+			{
+				"buffer_size": 1004,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"scratch": true
 			}
 		},
 		{
 			"file": "www/templates/login.html",
 			"settings":
 			{
-				"buffer_size": 289,
+				"buffer_size": 268,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/templates/config.html",
-			"settings":
-			{
-				"buffer_size": 1142,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "www/templates/main.html",
 			"settings":
 			{
-				"buffer_size": 369,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "/* Empty. Add your own CSS if you like */\n",
-			"file": "www/css/style.css",
-			"file_size": 208,
-			"file_write_time": 1440883092000000,
-			"settings":
-			{
-				"buffer_size": 42,
+				"buffer_size": 401,
 				"line_ending": "Unix"
 			}
 		},
@@ -146,7 +145,15 @@
 			"file": "www/templates/chat.html",
 			"settings":
 			{
-				"buffer_size": 1654,
+				"buffer_size": 1873,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/templates/config.html",
+			"settings":
+			{
+				"buffer_size": 1301,
 				"line_ending": "Unix"
 			}
 		}
@@ -154,9 +161,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 288.0,
+		"height": 75.0,
 		"selected_items":
 		[
+			[
+				"comme",
+				"Toggle Comment"
+			],
 			[
 				"Package Control: i",
 				"Package Control: Install Package"
@@ -166,7 +177,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -183,6 +194,14 @@
 	},
 	"file_history":
 	[
+		"/home/yumbo/git/now-or-never-client-app/package.json",
+		"/home/yumbo/git/now-or-never-client-app/ionic.project",
+		"/home/yumbo/git/now-or-never-client-app/www/templates/chat.html",
+		"/home/yumbo/git/now-or-never-client-app/www/index.html",
+		"/home/yumbo/git/now-or-never-client-app/www/templates/login.html",
+		"/home/yumbo/git/now-or-never-client-app/www/templates/config.html",
+		"/home/yumbo/git/now-or-never-client-app/www/templates/main.html",
+		"/home/yumbo/git/now-or-never-client-app/www/css/style.css",
 		"/home/yumbo/git/ionic-non/config.xml",
 		"/home/yumbo/git/ionic-non/platforms/android/res/xml/config.xml",
 		"/home/yumbo/git/ionic-non/ionic-non.sublime-project",
@@ -242,6 +261,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=\"\"\n",
+			"Disconnected",
+			"contact",
+			"bac",
+			"table",
+			"facelogin",
+			">\n",
+			"sessionStorage",
+			"session",
+			"JSON",
+			"console",
+			"user",
+			"sessionStorage",
 			"text",
 			"  ",
 			"back",
@@ -315,6 +347,7 @@
 	"groups":
 	[
 		{
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -322,76 +355,20 @@
 					"file": "www/js/app.js",
 					"settings":
 					{
-						"buffer_size": 6791,
+						"buffer_size": 7295,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2882,
-								2882
+								1798,
+								1798
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1117.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/controllers.js",
-					"settings":
-					{
-						"buffer_size": 3522,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2741,
-								2741
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1641.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "ionic.project",
-					"settings":
-					{
-						"buffer_size": 174,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								58,
-								58
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -402,19 +379,47 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "www/index.html",
+					"buffer": 1,
+					"file": "www/js/controllers.js",
 					"settings":
 					{
-						"buffer_size": 2899,
+						"buffer_size": 3747,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								978,
-								978
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/index.html",
+					"settings":
+					{
+						"buffer_size": 3252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1263,
+								1263
 							]
 						],
 						"settings":
@@ -424,7 +429,34 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 442.0,
+						"translation.y": 860.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 1004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1004,
+								1004
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 390.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -434,15 +466,15 @@
 					"file": "www/templates/login.html",
 					"settings":
 					{
-						"buffer_size": 289,
+						"buffer_size": 268,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								30,
-								30
+								110,
+								110
 							]
 						],
 						"settings":
@@ -457,18 +489,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "www/templates/config.html",
+					"file": "www/templates/main.html",
 					"settings":
 					{
-						"buffer_size": 1142,
+						"buffer_size": 401,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79,
-								79
+								14,
+								14
 							]
 						],
 						"settings":
@@ -485,23 +517,25 @@
 				},
 				{
 					"buffer": 6,
-					"file": "www/templates/main.html",
+					"file": "www/templates/chat.html",
 					"settings":
 					{
-						"buffer_size": 369,
+						"buffer_size": 1873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								38,
-								38
+								41,
+								41
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -511,44 +545,18 @@
 				},
 				{
 					"buffer": 7,
-					"file": "www/css/style.css",
+					"file": "www/templates/config.html",
 					"settings":
 					{
-						"buffer_size": 42,
+						"buffer_size": 1301,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "www/templates/chat.html",
-					"settings":
-					{
-						"buffer_size": 1654,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								108,
-								108
+								125,
+								125
 							]
 						],
 						"settings":
@@ -607,6 +615,26 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"con",
+				"www/templates/config.html"
+			],
+			[
+				"chat",
+				"www/templates/chat.html"
+			],
+			[
+				"main",
+				"www/templates/main.html"
+			],
+			[
+				"logi",
+				"www/templates/login.html"
+			],
+			[
+				"index",
+				"www/index.html"
+			],
 			[
 				"cha",
 				"www/templates/chat.html"

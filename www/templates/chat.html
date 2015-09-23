@@ -1,42 +1,51 @@
-<ion-view view-title="{{contact.profile.displayName}}">
-<ion-nav-buttons side="right">
-<a href="#/profile">
-        <button class="button ion-person" style="border: none;
-    border-left: 1px solid #000 !important;"></button>
-    </a>
+<ion-view>
+  <ion-nav-bar>
+    <ion-nav-buttons side="left">
+      <a nav-direction="back" class="button icon-left ion-chevron-left button-clear">Back</a>
     </ion-nav-buttons>
-<ion-content class="content-stable">
+  </ion-nav-bar>
+
+  <div class="bar bar-header">
+    <h2 class="title">{{contact.name}}, 18</h1>
+  </div>
+
+  <ion-nav-buttons side="right">
+    <a href="#/profile">
+      <button class="button profile ion-person"></button>
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content class="content-view chat">
     <div class="row">
-        <div class="col col-75">
-
-
-<timer id="elsupertimer" countdown="180" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()"><h1 class="timer" style="font-family: 'Open Sans','Helvetica Neue', 'Roboto', 'Segoe UI', sans-serif;
-line-height: 1.2;" >{{mminutes}}m:{{sseconds}}s</h1></timer>
+      <div class="col col-75">
+        <timer id="elsupertimer" countdown="180" max-time-unit="'minute'" interval="1000" finish-callback="finishCount()">
+          <p class="timer">{{mminutes}}m:{{sseconds}}s</p>
+        </timer>
+      </div>
+        <div class="col">
+          <center>
+            <p class="message-count">{{ messageCount }}</p>
+            mensajes
+          </center>
         </div>
-        <div class="col"><center><h1 style="font-size: 25px;
-line-height: 24px;
-margin-top: 10px;
-color: #A0A0A0;
-margin-bottom:0;
-font-weight: bold;">{{ messageCount }}</h1>mensajes</center></div>
     </div>
-    <hr>
-<div ng-repeat="message in messages"
-           ng-class="{other: message.user == me}"
-           class="messages">
 
+    <hr>
+
+      <div ng-repeat="message in messages" ng-class="{other: message.user == me}" class="messages">
         <div class="message">
           <span class="message-span">{{ message.text }}</span>
         </div>
       </div>
 
-    </ion-content>
+  </ion-content>
+
   <ion-footer-bar keyboard-attach class="bar-stable item-input-inset" style="margin-top:20%">
-      <label class="item-input-wrapper">
-        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" ng-disabled="timeOutBaby()"/>
-      </label>
-      <button class="button button-clear" ng-click="sendMessage()" ng-disabled="timeOutBaby() || data.message.length < 1">
-        Send
-      </button>
-    </ion-footer-bar>
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" ng-disabled="timeOutBaby()"/>
+    </label>
+    <button class="button button-clear" ng-click="sendMessage()" ng-disabled="timeOutBaby() || data.message.length < 1">
+      Enviar
+    </button>
+  </ion-footer-bar>
 </ion-view>

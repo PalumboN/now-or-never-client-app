@@ -6,6 +6,7 @@
     <title></title>
 
 <style type="text/css">
+
 .scroll {
   padding: 10px 0 50px !important;
 }
@@ -27,19 +28,90 @@
 }
 
 .messages.other .message-span {
-  color: black !important;
-  background-color: #C7C7CC !important;
+  background-color: lightskyblue !important;
 }
 
 .message-span {
-    background: #18BDE4 !important;
-    display: inline-block !important;
-    color: white !important;
-    padding: 10px !important;
-    border-radius: 10px !important;
-    text-align: left !important;
-    max-width: 240px !important;
+  background: lightgray !important;
+  display: inline-block !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  text-align: left !important;
+  max-width: 240px !important;
 }
+
+.header {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.content-view.login {
+  background-color: lightyellow;
+}
+
+.content-view.main {
+  background-color: lightyellow;
+}
+
+.content-view.config {
+  background-color: lightyellow;
+}
+
+.content-view.chat {
+  background-color: lightyellow;
+}
+
+.asd {
+  margin: auto !important;
+  width: 60% !important;
+  margin-top: 50% !important;
+}
+
+.button.profile {
+  border: none;
+  border-left: 1px solid #000;
+}
+
+.timer {
+  font-size: xx-large;
+  font-family: 'Open Sans','Helvetica Neue', 'Roboto', 'Segoe UI', sans-serif;
+  line-height: 1.2;
+}
+
+.message-count {
+  font-size: x-large;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.tittle {
+  color: rgb(50, 135, 70) !important;
+  margin-top: 28% !important;
+  text-align: center !important;
+  font-size: 380% !important;
+  font-weight: bold !important;
+}
+
+.facelogin {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  width: 30% !important;
+  display: table !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 40% !important;
+}
+
+.settings-button {
+  font-size: 350%; 
+  color: gray;
+}
+
+.spinner svg {
+  width: 28% !important;
+  height: inherit !important;
+}
+
 </style>
 
 
@@ -80,10 +152,6 @@
   </head>
 
   <body ng-app="nan">
-    <ion-nav-bar class="bar-positive">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
     <ion-nav-view></ion-nav-view>
   </body>
 </html>
